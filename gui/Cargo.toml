@@ -9,3 +9,4 @@ workspace = ".."
 passutil = { path = "../" }
 iced = "0.13.1"
 thiserror = "1.0.64"
+rfd = "0.15.0"

@@ -1,24 +1,20 @@
-use crate::messages::Messages;
-use iced::alignment::Horizontal::Center;
-use iced::widget::{button, column, text, Column};
+use crate::messages::Message;
+use filepicker::file_picker;
+use iced::alignment::Horizontal::{self};
+use iced::widget::{button, column, container, text, Container};
 
 /// File picker for user image
-mod filepicker;
+pub mod filepicker;
 /// footer
-mod footer;
+pub mod footer;
 /// header
-mod header;
+pub mod header;
 /// Image board of images by path
-mod imagegrid;
+pub mod imagegrid;
 /// Selector for choose path
-mod selector;
+pub mod selector;
 
 /// Render app
-pub fn render(state: &crate::state::State) -> Column<Messages> {
-    column![
-        button("Increment").on_press(Messages::Increment),
-        text(state.count).size(50),
-        button("Decrement").on_press(Messages::Decrement)
-    ]
-    .align_x(Center)
+pub fn render(state: &crate::state::State) -> Container<Message> {
+    container(file_picker(state)).align_x(Horizontal::Center))
 }
