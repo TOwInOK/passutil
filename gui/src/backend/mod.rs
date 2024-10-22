@@ -1,1 +1,1 @@
-pub mod dirtype;
+pub mod dir;
