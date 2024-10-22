@@ -16,5 +16,5 @@ pub mod selector;
 
 /// Render app
 pub fn render(state: &crate::state::State) -> Container<Message> {
-    container(file_picker(state)).align_x(Horizontal::Center))
+    container(file_picker(state)).align_x(Horizontal::Center)
 }
