@@ -301,8 +301,7 @@ pub enum TextAlignment {
 /// However, text position is also related to valid cursor positions. Therefore:
 /// - The beginning of a line has text position `0`.
 /// - The end of a line is a valid text position. e.g. `text.len()` is a valid text position.
-/// - If the text position is not at a code point or grapheme boundary, undesirable behavior may
-/// occur.
+/// - If the text position is not at a code point or grapheme boundary, undesirable behavior mayoccur.
 pub trait TextLayout: Clone {
     /// The total size of this `TextLayout`.
     ///

@@ -217,7 +217,6 @@ impl Type {
 /// Search files in path and filtered by filetype
 fn search(path: &str, filetype: &str) -> Vec<PathBuf> {
     use std::fs;
-    use std::path::PathBuf;
     fs::read_dir(path)
         .unwrap()
         .filter_map(|entry| {
@@ -237,7 +236,7 @@ fn search(path: &str, filetype: &str) -> Vec<PathBuf> {
 mod dirtype {
     use std::path::PathBuf;
 
-    use crate::backend::dirtype::search;
+    use crate::backend::dir::search;
     #[test]
     fn search_in_dev_dir() {
         let paths = search(".", "toml");

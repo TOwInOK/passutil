@@ -1,9 +1,13 @@
-use crate::state::State;
+use messages::call;
+use ui::render;
+
 mod backend;
 mod error;
 mod messages;
 mod result;
 mod state;
+mod ui;
+
 fn main() -> iced::Result {
-    iced::run("Passutil", State::update, State::view)
+    iced::run("Passutil", call, render)
 }

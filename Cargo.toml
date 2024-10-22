@@ -1,4 +1,5 @@
 [workspace]
+lint = true
 members = [
     "piet/piet",
     "piet/piet-cairo",
@@ -9,13 +10,13 @@ members = [
     "piet/piet-web/examples/basic",
     "piet/piet-svg",
     "gui",
-    ".",
 ]
 
 [package]
 name = "passutil"
 version = "0.1.0"
 edition = "2021"
+
 
 [dependencies]
 piet = { path = "piet/piet", features = ["png", "serde"] }
