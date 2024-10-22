@@ -1,5 +1,4 @@
 [workspace]
-
 members = [
     "piet/piet",
     "piet/piet-cairo",
@@ -9,6 +8,7 @@ members = [
     "piet/piet-web",
     "piet/piet-web/examples/basic",
     "piet/piet-svg",
+    "gui",
     ".",
 ]
 

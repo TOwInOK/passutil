@@ -77,7 +77,7 @@ fn handle_err(
 ) -> Result<(), Box<dyn std::error::Error>> {
     log_str(f, &format!("Error found: {e}"))?;
     std::io::stdin().read_line(&mut "".into())?;
-    return Err(Box::new(Error));
+    Err(Box::new(Error))
 }
 
 fn log_str(f: &mut File, s: &str) -> Result<(), Box<dyn std::error::Error>> {

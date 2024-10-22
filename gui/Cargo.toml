@@ -1,0 +1,11 @@
+[package]
+name = "gui"
+version = "0.1.0"
+edition = "2021"
+workspace = ".."
+
+
+[dependencies]
+passutil = { path = "../" }
+iced = "0.13.1"
+thiserror = "1.0.64"

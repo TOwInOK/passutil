@@ -53,7 +53,7 @@ pub fn draw_text_blobs(
         let lines = about
             .text
             .split("\n")
-            .map(|s| String::from(s))
+            .map(String::from)
             .collect::<Vec<String>>();
 
         let font = rc
@@ -66,10 +66,7 @@ pub fn draw_text_blobs(
 
         for line in lines {
             let mut x = line_x;
-            let words = line
-                .split(" ")
-                .map(|s| String::from(s))
-                .collect::<Vec<String>>();
+            let words = line.split(" ").map(String::from).collect::<Vec<String>>();
 
             let mut is_first_in_line = true;
 
@@ -85,13 +82,12 @@ pub fn draw_text_blobs(
                     .default_attribute(TextAttribute::TextColor(color))
                     .build()?;
                 is_first_in_line = false;
-                
+
                 let current_width = layout.size().width;
                 if current_width + x > max_x {
                     line_x = x0;
                     x = line_x;
                     y += dy;
-                    
                 }
 
                 rc.draw_text(&layout, (x, y));
