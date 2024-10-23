@@ -1,6 +1,6 @@
 use std::path::PathBuf;
 
-use crate::{messages::Message, state::State};
+use crate::state::{Message, State};
 use iced::alignment::Horizontal;
 use iced::widget::{button, column, text};
 use rfd::FileDialog;

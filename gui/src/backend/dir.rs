@@ -1,84 +1,6 @@
 use std::path::PathBuf;
 
 use crate::result::Result;
-
-/// Subfolders of backgrounds folder
-pub enum BackgroundType {
-    All,
-    Creators,
-    Events,
-    Holidays,
-    Oldpoints,
-    Oldseasons,
-    Shop,
-    Support,
-}
-/// Subfolders of badges folder
-pub enum BadgeType {
-    Achievements,
-    All,
-    Anime,
-    Coders,
-    Codes,
-    Coops,
-    Creators,
-    Events,
-    Halloween,
-    Holidays,
-    Iwas,
-    Limited,
-    Messages,
-    Music,
-    NewYear,
-    None,
-    OldPoints,
-    OldSeasons,
-    OldSides,
-    Paws,
-    Rp,
-    Shop,
-    Support,
-    Tournaments,
-}
-/// Subfolders of frames folder
-pub enum FrameType {
-    Classic,
-    Minecraft,
-    Neon,
-    None,
-    Pastel,
-}
-/// Subfolders of banners folder
-pub enum BannerType {
-    All,
-    Creators,
-    Events,
-    Holidays,
-    Limited,
-    None,
-    Seasons,
-    Shop,
-}
-
-/// Where we can find some data
-pub enum DirType {
-    Background(BackgroundType),
-    Badge(BadgeType),
-    Banner(BannerType),
-    Frame(FrameType),
-    Friend,
-}
-/// Single file in the main folder
-pub enum FileType {
-    Avatar,
-}
-
-/// Data absorbation
-pub enum Type {
-    File(FileType),
-    Folder(DirType),
-}
-
 // unique paths
 const AVATAR_PATH: &str = "avatar.png";
 const FRIENDS: &str = "friends/";
@@ -242,5 +164,171 @@ mod dirtype {
         let paths = search(".", "toml");
         let comparable = PathBuf::from("./Cargo.toml");
         assert_eq!(vec![comparable], paths);
+    }
+}
+
+/// Subfolders of backgrounds folder
+#[derive(Debug, PartialEq, Eq, Clone, Copy)]
+pub enum BackgroundType {
+    All,
+    Creators,
+    Events,
+    Holidays,
+    Oldpoints,
+    Oldseasons,
+    Shop,
+    Support,
+}
+impl std::fmt::Display for BackgroundType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            BackgroundType::All => f.write_str("All"),
+            BackgroundType::Creators => f.write_str("Creators"),
+            BackgroundType::Events => f.write_str("Events"),
+            BackgroundType::Holidays => f.write_str("Holidays"),
+            BackgroundType::Oldpoints => f.write_str("Oldpoints"),
+            BackgroundType::Oldseasons => f.write_str("Oldseasons"),
+            BackgroundType::Shop => f.write_str("Shop"),
+            BackgroundType::Support => f.write_str("Support"),
+        }
+    }
+}
+/// Subfolders of badges folder
+#[derive(Debug, PartialEq, Eq, Clone, Copy)]
+pub enum BadgeType {
+    Achievements,
+    All,
+    Anime,
+    Coders,
+    Codes,
+    Coops,
+    Creators,
+    Events,
+    Halloween,
+    Holidays,
+    Iwas,
+    Limited,
+    Messages,
+    Music,
+    NewYear,
+    None,
+    OldPoints,
+    OldSeasons,
+    OldSides,
+    Paws,
+    Rp,
+    Shop,
+    Support,
+    Tournaments,
+}
+impl std::fmt::Display for BadgeType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            BadgeType::Achievements => f.write_str("Achievements"),
+            BadgeType::All => f.write_str("All"),
+            BadgeType::Anime => f.write_str("Anime"),
+            BadgeType::Coders => f.write_str("Coders"),
+            BadgeType::Codes => f.write_str("Codes"),
+            BadgeType::Coops => f.write_str("Coops"),
+            BadgeType::Creators => f.write_str("Creators"),
+            BadgeType::Events => f.write_str("Events"),
+            BadgeType::Halloween => f.write_str("Halloween"),
+            BadgeType::Holidays => f.write_str("Holidays"),
+            BadgeType::Iwas => f.write_str("Iwas"),
+            BadgeType::Limited => f.write_str("Limited"),
+            BadgeType::Messages => f.write_str("Messages"),
+            BadgeType::Music => f.write_str("Music"),
+            BadgeType::NewYear => f.write_str("NewYear"),
+            BadgeType::None => f.write_str("None"),
+            BadgeType::OldPoints => f.write_str("OldPoints"),
+            BadgeType::OldSeasons => f.write_str("OldSeasons"),
+            BadgeType::OldSides => f.write_str("OldSides"),
+            BadgeType::Paws => f.write_str("Paws"),
+            BadgeType::Rp => f.write_str("Rp"),
+            BadgeType::Shop => f.write_str("Shop"),
+            BadgeType::Support => f.write_str("Support"),
+            BadgeType::Tournaments => f.write_str("Tournaments"),
+        }
+    }
+}
+/// Subfolders of frames folder
+#[derive(Debug, PartialEq, Eq, Clone, Copy)]
+pub enum FrameType {
+    Classic,
+    Minecraft,
+    Neon,
+    None,
+    Pastel,
+}
+impl std::fmt::Display for FrameType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            FrameType::Classic => f.write_str("Classic"),
+            FrameType::Minecraft => f.write_str("Minecraft"),
+            FrameType::Neon => f.write_str("Neon"),
+            FrameType::None => f.write_str("None"),
+            FrameType::Pastel => f.write_str("Pastel"),
+        }
+    }
+}
+/// Subfolders of banners folder
+#[derive(Debug, PartialEq, Eq, Clone, Copy)]
+pub enum BannerType {
+    All,
+    Creators,
+    Events,
+    Holidays,
+    Limited,
+    None,
+    Seasons,
+    Shop,
+}
+impl std::fmt::Display for BannerType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            BannerType::All => f.write_str("All"),
+            BannerType::Creators => f.write_str("Creators"),
+            BannerType::Events => f.write_str("Events"),
+            BannerType::Holidays => f.write_str("Holidays"),
+            BannerType::Limited => f.write_str("Limited"),
+            BannerType::None => f.write_str("None"),
+            BannerType::Seasons => f.write_str("Seasons"),
+            BannerType::Shop => f.write_str("Shop"),
+        }
+    }
+}
+/// Where we can find some data
+#[derive(Debug, PartialEq, Eq, Clone, Copy)]
+pub enum DirType {
+    Background(BackgroundType),
+    Badge(BadgeType),
+    Banner(BannerType),
+    Frame(FrameType),
+    Friend,
+}
+/// Single file in the main folder
+#[derive(Debug, PartialEq, Eq, Clone, Copy)]
+pub enum FileType {
+    Avatar,
+}
+impl std::fmt::Display for FileType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            FileType::Avatar => f.write_str("Avatar"),
+        }
+    }
+}
+/// Data absorbation
+#[derive(Debug, PartialEq, Eq, Clone, Copy)]
+pub enum Type {
+    File(FileType),
+    Folder(DirType),
+}
+impl std::fmt::Display for Type {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.write_str(match self {
+            Type::File(_) => "File",
+            Type::Folder(_) => "Folder",
+        })
     }
 }

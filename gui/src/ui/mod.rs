@@ -1,7 +1,8 @@
-use crate::messages::Message;
 use filepicker::file_picker;
 use iced::alignment::Horizontal::{self};
-use iced::widget::{button, column, container, text, Container};
+use iced::widget::{column, container, Container};
+
+use crate::state::Message;
 
 /// File picker for user image
 pub mod filepicker;
@@ -16,5 +17,6 @@ pub mod selector;
 
 /// Render app
 pub fn render(state: &crate::state::State) -> Container<Message> {
-    container(file_picker(state)).align_x(Horizontal::Center)
+    let app = column![file_picker(state)];
+    container(app).align_x(Horizontal::Center)
 }
