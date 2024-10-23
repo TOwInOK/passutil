@@ -9,5 +9,9 @@ use crate::{
 pub fn call(state: &mut State, message: Message) {
     match message {
         Message::PickAvatar => state.avatar_path = file_pick(),
+        Message::SelectBackground => todo!(),
+        Message::SelectBadge => todo!(),
+        Message::SelectFrame => todo!(),
+        Message::SelectBanner => todo!(),
     }
 }

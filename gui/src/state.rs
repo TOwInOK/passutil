@@ -28,4 +28,13 @@ pub struct State {
 pub enum Message {
     /// Try to pick avatar img
     PickAvatar,
+    // Selectors
+    /// Select Background
+    SelectBackground,
+    /// Select Badge
+    SelectBadge,
+    /// Select Frame
+    SelectFrame,
+    /// Select Banner
+    SelectBanner,
 }
