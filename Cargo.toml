@@ -17,13 +17,18 @@ resolver = "2"
 [workspace.package]
 version = "0.1.0"
 edition = "2021"
-authors = ["TOwInOK", "Rottenfront"]
+authors = [
+    "TOwInOK <60252419+TOwInOK@users.noreply.github.com>",
+    "Rottenfront <andrey.i.bankov@gmail.com>",
+]
 repository = "https://github.com/TOwInOK/SSS-rs"
 license = "Apache-2.0"
 
 [workspace.metadata.docs]
 rs-doc-path = "docs"
 
+[workspace.dependencies]
+image = "0.25"
 
 [profile.dev]
 opt-level = 0

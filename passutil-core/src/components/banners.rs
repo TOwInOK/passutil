@@ -13,7 +13,7 @@ use super::{utils::draw_image, ImageEnum};
 
 pub fn draw_banners(
     rc: &mut impl RenderContext,
-    assets/banners: &[Banner; 2],
+    banners: &[Banner; 2],
 ) -> Result<(), Box<dyn std::error::Error>> {
     let x0 = 710.0;
     let x1 = 860.0;
@@ -24,7 +24,7 @@ pub fn draw_banners(
     let size = Size::new(width, height);
 
     'first: {
-        let image = assets/banners[0].get_image();
+        let image = banners[0].get_image();
         let Ok(image) = image else {
             break 'first;
         };
@@ -32,7 +32,7 @@ pub fn draw_banners(
     }
 
     'second: {
-        let image = assets/banners[1].get_image();
+        let image = banners[1].get_image();
         let Ok(image) = image else {
             break 'second;
         };

@@ -9,5 +9,6 @@ mod state;
 mod ui;
 
 fn main() -> iced::Result {
+    // TODO: check assets before load app
     iced::run("Passutil", call, render)
 }

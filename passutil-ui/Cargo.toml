@@ -7,6 +7,6 @@ license.workspace = true
 
 
 [dependencies]
-iced = "0.13.1"
+iced = { version = "0.13.1", features = ["image"] }
 thiserror = "1.0.64"
 rfd = "0.15.0"

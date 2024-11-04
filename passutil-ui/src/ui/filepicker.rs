@@ -7,14 +7,17 @@ use rfd::FileDialog;
 
 // Message
 pub fn file_pick() -> Option<PathBuf> {
-    // if you want directly add path: &Type into ()
-    // let path = path
-    //     .get_file("avatar")?
-    //     .ok_or(Error::NotFound("avatar.png".to_string()))?;
     FileDialog::new()
         .add_filter("img", &["png"])
-        .set_directory("/")
+        .set_directory("./")
         .pick_file()
+}
+
+pub fn folder_pick() -> Option<PathBuf> {
+    FileDialog::new()
+        .add_filter("img", &["png"])
+        .set_directory("./")
+        .pick_folder()
 }
 
 /// Component

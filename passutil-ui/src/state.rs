@@ -2,33 +2,31 @@
 
 use std::path::PathBuf;
 
-use iced::widget::combo_box;
-
-use crate::backend::dir::{BackgroundType, BadgeType, BannerType, FrameType};
+use crate::ui::Plates;
 
 /// App state
 #[derive(Default)]
 pub struct State {
     /// Path to avatar
     pub avatar_path: Option<PathBuf>,
-    // lists state
-    pub background: combo_box::State<BackgroundType>,
-    pub badge: combo_box::State<BadgeType>,
-    pub frame: combo_box::State<FrameType>,
-    pub banner: combo_box::State<BannerType>,
-    // list action
-    pub select_background: Option<BackgroundType>,
-    pub select_badge: Option<BadgeType>,
-    pub select_frame: Option<FrameType>,
-    pub select_banner: Option<BannerType>,
+    /// Selected folder with friend's images
+    pub current_friend_folder_path: Option<PathBuf>,
+    /// Current right app's side
+    pub current_plate: Plates,
 }
 
 /// App actions
 #[derive(Debug, Clone)]
 pub enum Message {
+    // Pick sections
     /// Try to pick avatar img
     PickAvatar,
-    // Selectors
+    // Try to pick avatars from folder
+    PickFriends,
+
+    /// Try to fetch latest assets from github
+    ForceAssetsReload,
+    // Selector sections
     /// Select Background
     SelectBackground,
     /// Select Badge
@@ -37,4 +35,15 @@ pub enum Message {
     SelectFrame,
     /// Select Banner
     SelectBanner,
+
+    /// Switch window to Icons plate
+    SwitchWindowPin,
+    /// Switch window to Banner plate
+    SwitchWindowBanner,
+    /// Switch window to Background plate
+    SwitchWindowBackground,
+    /// Switch window to Frames plate
+    SwitchWindowFrame,
+    /// Switch window to About plate
+    SwitchWindowAbout,
 }

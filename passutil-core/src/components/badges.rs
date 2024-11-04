@@ -8,16 +8,16 @@ use serde::{Deserialize, Serialize};
 pub fn draw_badges(
     rc: &mut impl RenderContext,
     main_badges: &[Badge; 2],
-    assets/badges: &[[Badge; 4]; 5],
+    badges: &[[Badge; 4]; 5],
 ) -> Result<(), Box<dyn std::error::Error>> {
-    draw_common_badges(rc, assets/badges)?;
+    draw_common_badges(rc, badges)?;
 
     draw_main_badges(rc, main_badges)
 }
 
 fn draw_common_badges(
     rc: &mut impl RenderContext,
-    assets/badges: &[[Badge; 4]; 5],
+    badges: &[[Badge; 4]; 5],
 ) -> Result<(), Box<dyn std::error::Error>> {
     let x0 = 1015.0;
     let y0 = 196.0;
@@ -30,7 +30,7 @@ fn draw_common_badges(
     let dx = x1 - x0;
     let dy = y1 - y0;
     let mut y = y0;
-    for row in assets/badges {
+    for row in badges {
         let mut x = x0;
         for badge in row {
             let image = badge.get_image();
