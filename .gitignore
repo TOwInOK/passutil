@@ -10,10 +10,10 @@ Cargo.lock
 ## VScode project configuration files
 .vscode/
 
-!backgrounds/**/*.png
-!badges/**/*.png
-!banners/**/*.png
-!frames/**/*.png
+!assets/backgrounds/**/*.png
+!assets/badges/**/*.png
+!assets/banners/**/*.png
+!assets/frames/**/*.png
 
 dist/
 

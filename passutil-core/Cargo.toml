@@ -1,0 +1,18 @@
+
+
+[package]
+name = "passutil-core"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+
+[dependencies]
+piet = { path = "../piet/piet", features = ["png", "serde"] }
+piet-common = { path = "../piet/piet-common", features = ["png"] }
+image = "0.25"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = { version = "1.0" }
+
+encoding_rs = "0.8"
