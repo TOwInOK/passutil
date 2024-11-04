@@ -13,7 +13,7 @@ use super::{utils::draw_image, ImageEnum};
 
 pub fn draw_banners(
     rc: &mut impl RenderContext,
-    banners: &[Banner; 2],
+    assets/banners: &[Banner; 2],
 ) -> Result<(), Box<dyn std::error::Error>> {
     let x0 = 710.0;
     let x1 = 860.0;
@@ -24,7 +24,7 @@ pub fn draw_banners(
     let size = Size::new(width, height);
 
     'first: {
-        let image = banners[0].get_image();
+        let image = assets/banners[0].get_image();
         let Ok(image) = image else {
             break 'first;
         };
@@ -32,7 +32,7 @@ pub fn draw_banners(
     }
 
     'second: {
-        let image = banners[1].get_image();
+        let image = assets/banners[1].get_image();
         let Ok(image) = image else {
             break 'second;
         };
@@ -59,13 +59,13 @@ impl ImageEnum for Banner {
     fn get_path(&self) -> String {
         match self {
             Banner::none => "".into(),
-            Banner::all(num) => format!("banners/all/{}.png", num),
-            Banner::creators(num) => format!("banners/creators/{}.png", num),
-            Banner::events(num) => format!("banners/events/{}.png", num),
-            Banner::holidays(num) => format!("banners/holidays/{}.png", num),
-            Banner::limited(num) => format!("banners/limited/{}.png", num),
-            Banner::seasons(num) => format!("banners/seasons/{}.png", num),
-            Banner::shop(num) => format!("banners/shop/{}.png", num),
+            Banner::all(num) => format!("assets/banners/all/{}.png", num),
+            Banner::creators(num) => format!("assets/banners/creators/{}.png", num),
+            Banner::events(num) => format!("assets/banners/events/{}.png", num),
+            Banner::holidays(num) => format!("assets/banners/holidays/{}.png", num),
+            Banner::limited(num) => format!("assets/banners/limited/{}.png", num),
+            Banner::seasons(num) => format!("assets/banners/seasons/{}.png", num),
+            Banner::shop(num) => format!("assets/banners/shop/{}.png", num),
         }
     }
 }

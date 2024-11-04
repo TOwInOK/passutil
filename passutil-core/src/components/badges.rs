@@ -8,16 +8,16 @@ use serde::{Deserialize, Serialize};
 pub fn draw_badges(
     rc: &mut impl RenderContext,
     main_badges: &[Badge; 2],
-    badges: &[[Badge; 4]; 5],
+    assets/badges: &[[Badge; 4]; 5],
 ) -> Result<(), Box<dyn std::error::Error>> {
-    draw_common_badges(rc, badges)?;
+    draw_common_badges(rc, assets/badges)?;
 
     draw_main_badges(rc, main_badges)
 }
 
 fn draw_common_badges(
     rc: &mut impl RenderContext,
-    badges: &[[Badge; 4]; 5],
+    assets/badges: &[[Badge; 4]; 5],
 ) -> Result<(), Box<dyn std::error::Error>> {
     let x0 = 1015.0;
     let y0 = 196.0;
@@ -30,7 +30,7 @@ fn draw_common_badges(
     let dx = x1 - x0;
     let dy = y1 - y0;
     let mut y = y0;
-    for row in badges {
+    for row in assets/badges {
         let mut x = x0;
         for badge in row {
             let image = badge.get_image();
@@ -129,29 +129,29 @@ impl ImageEnum for Badge {
     fn get_path(&self) -> String {
         match self {
             Badge::none => "".into(),
-            Badge::achievements(num) => format!("badges/achievements/{}.png", num),
-            Badge::all(num) => format!("badges/all/{}.png", num),
-            Badge::anime(num) => format!("badges/anime/{}.png", num),
-            Badge::coders(num) => format!("badges/coders/{}.png", num),
-            Badge::codes(num) => format!("badges/codes/{}.png", num),
-            Badge::coops(num) => format!("badges/coop/{}.png", num),
-            Badge::creators(num) => format!("badges/creators/{}.png", num),
-            Badge::events(num) => format!("badges/events/{}.png", num),
-            Badge::halloween(num) => format!("badges/halloween/{}.png", num),
-            Badge::holidays(num) => format!("badges/holidays/{}.png", num),
-            Badge::iwas(num) => format!("badges/iwas/{}.png", num),
-            Badge::limited(num) => format!("badges/limited/{}.png", num),
-            Badge::messages(num) => format!("badges/messages/{}.png", num),
-            Badge::music(num) => format!("badges/music/{}.png", num),
-            Badge::newyear(num) => format!("badges/newyear/{}.png", num),
-            Badge::oldpoints(num) => format!("badges/oldpoints/{}.png", num),
-            Badge::oldseasons(num) => format!("badges/oldseasons/{}.png", num),
-            Badge::oldsides(num) => format!("badges/oldsides/{}.png", num),
-            Badge::paws(num) => format!("badges/paws/{}.png", num),
-            Badge::rp(num) => format!("badges/rp/{}.png", num),
-            Badge::shop(num) => format!("badges/shop/{}.png", num),
-            Badge::support(num) => format!("badges/support/{}.png", num),
-            Badge::tournaments(num) => format!("badges/tournaments/{}.png", num),
+            Badge::achievements(num) => format!("assets/badges/achievements/{}.png", num),
+            Badge::all(num) => format!("assets/badges/all/{}.png", num),
+            Badge::anime(num) => format!("assets/badges/anime/{}.png", num),
+            Badge::coders(num) => format!("assets/badges/coders/{}.png", num),
+            Badge::codes(num) => format!("assets/badges/codes/{}.png", num),
+            Badge::coops(num) => format!("assets/badges/coop/{}.png", num),
+            Badge::creators(num) => format!("assets/badges/creators/{}.png", num),
+            Badge::events(num) => format!("assets/badges/events/{}.png", num),
+            Badge::halloween(num) => format!("assets/badges/halloween/{}.png", num),
+            Badge::holidays(num) => format!("assets/badges/holidays/{}.png", num),
+            Badge::iwas(num) => format!("assets/badges/iwas/{}.png", num),
+            Badge::limited(num) => format!("assets/badges/limited/{}.png", num),
+            Badge::messages(num) => format!("assets/badges/messages/{}.png", num),
+            Badge::music(num) => format!("assets/badges/music/{}.png", num),
+            Badge::newyear(num) => format!("assets/badges/newyear/{}.png", num),
+            Badge::oldpoints(num) => format!("assets/badges/oldpoints/{}.png", num),
+            Badge::oldseasons(num) => format!("assets/badges/oldseasons/{}.png", num),
+            Badge::oldsides(num) => format!("assets/badges/oldsides/{}.png", num),
+            Badge::paws(num) => format!("assets/badges/paws/{}.png", num),
+            Badge::rp(num) => format!("assets/badges/rp/{}.png", num),
+            Badge::shop(num) => format!("assets/badges/shop/{}.png", num),
+            Badge::support(num) => format!("assets/badges/support/{}.png", num),
+            Badge::tournaments(num) => format!("assets/badges/tournaments/{}.png", num),
         }
     }
 }

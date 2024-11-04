@@ -38,14 +38,14 @@ impl Default for Background {
 impl ImageEnum for Background {
     fn get_path(&self) -> String {
         match self {
-            Background::all(num) => format!("backgrounds/all/{}.png", num),
-            Background::creators(num) => format!("backgrounds/creators/{}.png", num),
-            Background::events(num) => format!("backgrounds/events/{}.png", num),
-            Background::holidays(num) => format!("backgrounds/holidays/{}.png", num),
-            Background::oldpoints(num) => format!("backgrounds/oldpoints/{}.png", num),
-            Background::oldseasons(num) => format!("backgrounds/oldseasons/{}.png", num),
-            Background::shop(num) => format!("backgrounds/shop/{}.png", num),
-            Background::support(num) => format!("backgrounds/support/{}.png", num),
+            Background::all(num) => format!("assets/backgrounds/all/{}.png", num),
+            Background::creators(num) => format!("assets/backgrounds/creators/{}.png", num),
+            Background::events(num) => format!("assets/backgrounds/events/{}.png", num),
+            Background::holidays(num) => format!("assets/backgrounds/holidays/{}.png", num),
+            Background::oldpoints(num) => format!("assets/backgrounds/oldpoints/{}.png", num),
+            Background::oldseasons(num) => format!("assets/backgrounds/oldseasons/{}.png", num),
+            Background::shop(num) => format!("assets/backgrounds/shop/{}.png", num),
+            Background::support(num) => format!("assets/backgrounds/support/{}.png", num),
         }
     }
 }

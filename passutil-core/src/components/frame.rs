@@ -33,10 +33,10 @@ impl ImageEnum for Frame {
     fn get_path(&self) -> String {
         match self {
             Frame::none => "".into(),
-            Frame::classic(num) => format!("frames/classic/{}.png", num),
-            Frame::minecraft(num) => format!("frames/minecraft/{}.png", num),
-            Frame::neon(num) => format!("frames/neon/{}.png", num),
-            Frame::pastel(num) => format!("frames/pastel/{}.png", num),
+            Frame::classic(num) => format!("assets/frames/classic/{}.png", num),
+            Frame::minecraft(num) => format!("assets/frames/minecraft/{}.png", num),
+            Frame::neon(num) => format!("assets/frames/neon/{}.png", num),
+            Frame::pastel(num) => format!("assets/frames/pastel/{}.png", num),
         }
     }
 }
